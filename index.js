@@ -48,18 +48,16 @@ const loadQuiz = async () => {
   const res = await fetch("./data/quiz.json");
   const data = await res.json();
   quizData = data;
-  console.log(data);
   displayQuiz(data);
 };
 
 // Displaying quiz on quiz page
 const displayQuiz = (data) => {
-  console.log(data);
   if (!data) {
     quizContainer.innerHTML = "";
     return;
   }
-
+console.log(quizContainer);
   data.forEach((quiz, i) => {
     quizContainer.innerHTML += `<div class="m-3 py-3 px-4 shadow-sm rounded">
   <div class="flex items-center">
